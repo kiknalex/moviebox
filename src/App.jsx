@@ -1,7 +1,11 @@
-
+import Header from "./components/Header/Header.jsx";
 
 function App() {
-  return (<h1 className="text-6xl font-bold underline text-center">Hello world!</h1>)
+  return (
+  <main className="bg-black">
+  <Header />
+  </main>
+  )
 }
 
 export default App
