@@ -1,9 +1,12 @@
-import Header from "./components/Header/Header.jsx";
-
+import Header from './components/Header/Header.jsx';
+import MovieIntro from './components/MovieIntro/MovieIntro.jsx';
+import FeaturedCards from './components/Cards/FeaturedCards.jsx';
 function App() {
   return (
-  <main className="bg-black">
+  <main className="">
   <Header />
+  <MovieIntro />
+  <FeaturedCards />
   </main>
   )
 }
