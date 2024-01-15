@@ -1,13 +1,13 @@
 export default function SearchBar() {
     
     return (
-        <div className="flex-grow grid place-items-center">
-            <form action="" className="w-full border-2 border-white flex px-3 py-1 text-white" >
-                <label for="search" className="flex-grow">
-                    <input id="search" className="w-full bg-transparent" type="text" placeholder="What do you want to watch?" />
+        <div className=" grid place-items-center w-7/12">
+            <form action="" className="w-full border-2 border-white flex px-2 py-3 text-white rounded-md" >
+                <label htmlFor="search" className="flex-grow">
+                    <input id="search" className="w-full bg-transparent placeholder-white focus:outline-none" type="text" placeholder="What do you want to watch?" />
                 </label>
                 <label>
-                    <button type="submit">Search</button>
+                    <button type="submit" onClick={e => e.preventDefault()} className="text-center pl-4"><img src="src\assets\searchIcon.svg" alt="search" width="16" height="16" /></button>
                 </label>
             </form>
         </div>

@@ -5,7 +5,13 @@ export default function useFetch(baseUrl) {
 
   function get(url) {
     return new Promise((resolve, reject) => {
-      fetch(baseUrl + url)
+      fetch(baseUrl + url, {
+        method: 'get',
+        headers: {
+            'X-RapidAPI-Key': '237b8a866amsh9ef5802869e708ap132adcjsne609f4253af3',
+            'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
+        }
+      })
         .then(response => response.json())
         .then(data => {
           if (!data) {
