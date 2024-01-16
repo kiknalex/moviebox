@@ -1,16 +1,27 @@
-export default function Card() {
+import {useState, useEffect} from 'react';
+import genres from "./genres.js"
+import Ratings from '../Misc/Ratings';
+export default function Card({item}) {
+    const showGenres = () => {
+       const filteredGenres = genres().filter(genre => item.genre_ids.find(id => id === genre.id));
+       const convertedGenres = filteredGenres.map((genre, index) => {
+        if(index !== filteredGenres.length - 1) {
+            return genre.name + ", "
+        } else {
+            return genre.name;
+        }
+       });
+       return convertedGenres;
+    }
     return (
         <div>
-            <a href="#">
-            <img src="" alt="movie name" width="40" height="80" />
-            </a>
-            <p>country, year</p>
-            <h3>Stranger Things</h3>
-            <div className="flex gap-2 py-2">
-                <p><span>imdbLogo</span>10/100</p>
-                <p><span>tomatoLogo</span> 20%</p>
-            </div>
-            <p>Action, Adventure, Horror</p>
+            
+            <img src={`https://image.tmdb.org/t/p/w300/${item.poster_path}`} alt={`${item.original_title} poster`} width="250" height="370" />
+            
+            <p>USA, {item.release_date}</p>
+            <h3>{item.original_title}</h3>
+            <Ratings imdb={item.vote_average} />
+            <p>{showGenres()}</p>
         </div>
     )
 }

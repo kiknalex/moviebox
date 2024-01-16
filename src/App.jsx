@@ -8,12 +8,12 @@ import FeaturedCards from './components/Cards/FeaturedCards.jsx';
 
 function App() {
   const [moviesIntro, setMoviesIntro] = useState([]);
-  const [currentIntro, setCurrentIntro] = useState(null);
-  const {get, loading} = useFetch('https://moviesdatabase.p.rapidapi.com');
+  const [currentIntro, setCurrentIntro] = useState([]);
+  const {get, loading} = useFetch('https://api.themoviedb.org/3');
   const intervalRef = useRef(0);
-  let introTimeoutId = null;
+  let introTimeoutId;
   useEffect(() => {
-  get("/titles/random?info=base_info&list=top_rated_series_250")
+  get("/movie/upcoming?language=en-US&page=1")
   .then(data => {
     const movies = data.results.map(item => item).splice(0,5);
     setCurrentIntro(movies[0]);
@@ -50,9 +50,9 @@ function App() {
   return (
   <main className="">
   <Header />
-  {!loading && <img src={currentIntro?.primaryImage.url} alt="intro poster" className='duration-300 absolute isolate -z-10 w-full min-h-40 max-h-full  object-cover object-center filter brightness-50' width="150" height="150" />}
-    <MovieIntro handleIntroClick={onClickIntro} currentIntro={currentIntro} moviesIntro={moviesIntro} />
-  <FeaturedCards />
+  {!loading && <img src={`https://image.tmdb.org/t/p/original/${currentIntro.poster_path}`} alt={`${currentIntro.original_title}`} className='absolute isolate -z-10 w-full min-h-40 max-h-full  object-cover object-center filter brightness-50' width="150" height="150" />}
+  <MovieIntro handleIntroClick={onClickIntro} currentIntro={currentIntro} moviesIntro={moviesIntro} />
+  <FeaturedCards category={"Featured Movies"} categoryItems={moviesIntro} />
   </main>
   )
 }

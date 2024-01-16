@@ -8,8 +8,8 @@ export default function useFetch(baseUrl) {
       fetch(baseUrl + url, {
         method: 'get',
         headers: {
-            'X-RapidAPI-Key': '237b8a866amsh9ef5802869e708ap132adcjsne609f4253af3',
-            'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
+          accept: 'application/json',
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2MzAwMWY2YmE0NmJmYzcwZGQ0OWQ2NzdjYzY1MjE0MyIsInN1YiI6IjY1YTYyZDIyOWJjZDBmMDEyZWJhNzJkMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.FlqF9ob-69txsWSgM1FpZQ9m0ruupOZYy1kzfMsoi38'
         }
       })
         .then(response => response.json())

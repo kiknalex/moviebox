@@ -1,5 +1,5 @@
 export default function SidebarButton() {
     return (
-        <button>Sidebar</button>
+        <button className="text-white">Sidebar</button>
     )
 }
