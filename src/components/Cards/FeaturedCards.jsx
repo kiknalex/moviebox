@@ -3,10 +3,10 @@ import Card from './Card';
 export default function FeaturedCards({category, categoryItems}) {
     const [emblaRef] = useEmblaCarousel();
     return (
-        <section className='container w-full'>
-            <h2>{category}</h2>
-            <div className='flex gap-2'>
-                <button><img src="src\assets\left.svg" alt="Previous" /></button>
+        <section className='container w-full mt-12'>
+            <h2 className='text-4xl font-bold'>{category}</h2>
+            <div className='flex gap-2 mt-10 relative'>
+                <button className='absolute'><img src="src\assets\left.svg" alt="Previous" /></button>
                 <div className='embla' ref={emblaRef}>
                     <div className='embla__container flex gap-20'>
                         {categoryItems.map(item => {

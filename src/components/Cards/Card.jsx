@@ -15,13 +15,11 @@ export default function Card({item}) {
     }
     return (
         <div>
-            
-            <img src={`https://image.tmdb.org/t/p/w300/${item.poster_path}`} alt={`${item.original_title} poster`} width="250" height="370" />
-            
-            <p>USA, {item.release_date}</p>
-            <h3>{item.original_title}</h3>
+            <img className='m-width-[200px]' src={`https://image.tmdb.org/t/p/w400/${item.poster_path}`} alt={`${item.original_title} poster`} width="200" height="300" />
+            <p className='text-xs pt-2 text-gray-400'>USA, {new Date(item.release_date).getFullYear()}</p>
+            <h3 className='text-lg font-bold leading-normal pt-2'>{item.original_title}</h3>
             <Ratings imdb={item.vote_average} />
-            <p>{showGenres()}</p>
+            <p className='text-xs pt-2 text-gray-400 flex flex-wrap'>{showGenres()}</p>
         </div>
     )
 }
