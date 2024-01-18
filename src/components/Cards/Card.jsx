@@ -17,7 +17,7 @@ export default function Card({item}) {
         <div>
             <img className='m-width-[200px]' src={`https://image.tmdb.org/t/p/w342/${item.poster_path}`} alt={`${item.original_title} poster`} width="200" height="300" />
             <p className='text-xs pt-2 text-gray-400'>USA, {new Date(item.release_date).getFullYear()}</p>
-            <h3 className='text-lg font-bold leading-normal pt-2'>{item.original_title}</h3>
+            <h3 className='text-lg font-bold leading-normal pt-2'>{item.title}</h3>
             <Ratings imdb={item.vote_average} />
             <p className='text-xs pt-2 text-gray-400 flex flex-wrap'>{showGenres()}</p>
         </div>
