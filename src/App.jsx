@@ -2,9 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import useFetch from "./hooks/useFetch.jsx";
 import Header from "./components/Header/Header.jsx";
 import MovieIntro from "./components/MovieIntro/MovieIntro.jsx";
-import FeaturedCards from "./components/Cards/FeaturedCards.jsx";
 import FeaturedCardsWrapper from "./components/Cards/FeaturedCardsWrapper.jsx";
-
 // NOTES:
 // make and use Loader component
 
@@ -14,6 +12,7 @@ function App() {
   const { get, loading } = useFetch("https://api.themoviedb.org/3");
   const intervalRef = useRef(0);
   let introTimeoutId;
+
   useEffect(() => {
     get("/movie/upcoming?language=en-US&page=1")
       .then((data) => {
@@ -21,7 +20,6 @@ function App() {
         setCurrentIntro(movies[0]);
         setMoviesIntro(movies);
         startIntroInterval(movies);
-        console.log(movies);
       })
       .catch((error) => {
         console.log(error);
@@ -67,8 +65,18 @@ function App() {
         currentIntro={currentIntro}
         moviesIntro={moviesIntro}
       />
-      <FeaturedCardsWrapper type={"movie"} category={"now_playing"} heading="Now Playing" />
-      <FeaturedCardsWrapper type={"movie"} category={"top_rated"} heading="Top Rated" />
+      <FeaturedCardsWrapper
+        type={"movie"}
+        category={"now_playing"}
+        heading="Now Playing"
+      />
+      <FeaturedCardsWrapper
+        type={"movie"}
+        category={"top_rated"}
+        heading="Top Rated"
+      />
+      <FeaturedCardsWrapper type={"person"} category={"popular"} heading="Featured Casts" />
+
     </main>
   );
 }
