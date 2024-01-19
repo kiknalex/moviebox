@@ -51,16 +51,8 @@ function App() {
   return (
     <main className="">
       <Header />
-      {!loading && (
-        <img
-          src={`https://image.tmdb.org/t/p/original/${currentIntro.poster_path}`}
-          alt={`${currentIntro.original_title}`}
-          className="absolute -z-10 w-full  max-h-full  object-cover object-center filter brightness-50"
-          width="500"
-          height="750"
-        />
-      )}
       <MovieIntro
+        loadin={loading}
         handleIntroClick={onClickIntro}
         currentIntro={currentIntro}
         moviesIntro={moviesIntro}
