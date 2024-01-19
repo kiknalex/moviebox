@@ -2,7 +2,6 @@ import useEmblaCarousel from "embla-carousel-react";
 import Card from "./Card";
 export default function FeaturedCards({
   type,
-  category,
   content,
   heading,
   loading,

@@ -75,8 +75,11 @@ function App() {
         category={"top_rated"}
         heading="Top Rated"
       />
-      <FeaturedCardsWrapper type={"person"} category={"popular"} heading="Featured Casts" />
-
+      <FeaturedCardsWrapper
+        type={"person"}
+        category={"popular"}
+        heading="Featured Casts"
+      />
     </main>
   );
 }

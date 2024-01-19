@@ -1,4 +1,3 @@
-import { useState } from "react";
 export default function Ratings({ imdb }) {
   return (
     <div className="flex gap-6 py-2 text-xs font-normal font-normal leading-3 ">
