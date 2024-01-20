@@ -20,7 +20,7 @@ export default function SearchBar() {
             className="text-center pl-4"
           >
             <img
-              src="../public/searchIcon.svg"
+              src="/searchIcon.svg"
               alt="search"
               width="16"
               height="16"

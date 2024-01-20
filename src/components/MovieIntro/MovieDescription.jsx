@@ -14,7 +14,7 @@ export default function MovieDescription({ currentIntro }) {
         className="flex justify-center items-center gap-2 py-2 px-6 bg-red-800 rounded-md hover:bg-red-700 duration-300 text-sm cursor-pointer font-bold tracking-wider uppercase"
       >
         <span>
-          <img src="../public/playIcon.svg" alt="" width="16" height="16" />
+          <img src="/playIcon.svg" alt="" width="16" height="16" />
         </span>
         WATCH TRAILER
       </a>
