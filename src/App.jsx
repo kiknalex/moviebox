@@ -3,9 +3,7 @@ import useFetch from "./hooks/useFetch.jsx";
 import Header from "./components/Header/Header.jsx";
 import MovieIntro from "./components/MovieIntro/MovieIntro.jsx";
 import FeaturedCardsWrapper from "./components/Cards/FeaturedCardsWrapper.jsx";
-// NOTES:
-// make and use Loader component
-
+import Footer from "./components/Footer/Footer.jsx"
 function App() {
   const [moviesIntro, setMoviesIntro] = useState([]);
   const [currentIntro, setCurrentIntro] = useState([]);
@@ -49,30 +47,33 @@ function App() {
     setCurrentIntro(moviesIntro[index]);
   };
   return (
-    <main className="">
-      <Header />
-      <MovieIntro
-        loadin={loading}
-        handleIntroClick={onClickIntro}
-        currentIntro={currentIntro}
-        moviesIntro={moviesIntro}
-      />
-      <FeaturedCardsWrapper
-        type={"movie"}
-        category={"now_playing"}
-        heading="Now Playing"
-      />
-      <FeaturedCardsWrapper
-        type={"movie"}
-        category={"top_rated"}
-        heading="Top Rated"
-      />
-      <FeaturedCardsWrapper
-        type={"person"}
-        category={"popular"}
-        heading="Featured Casts"
-      />
-    </main>
+    <>
+      <main className="">
+        <Header />
+        <MovieIntro
+          loadin={loading}
+          handleIntroClick={onClickIntro}
+          currentIntro={currentIntro}
+          moviesIntro={moviesIntro}
+        />
+        <FeaturedCardsWrapper
+          type={"movie"}
+          category={"now_playing"}
+          heading="Now Playing"
+        />
+        <FeaturedCardsWrapper
+          type={"movie"}
+          category={"top_rated"}
+          heading="Top Rated"
+        />
+        <FeaturedCardsWrapper
+          type={"person"}
+          category={"popular"}
+          heading="Featured Casts"
+        />
+      </main>
+      <Footer />
+    </>
   );
 }
 

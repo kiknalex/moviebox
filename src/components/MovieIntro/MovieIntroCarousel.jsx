@@ -1,11 +1,10 @@
-import { useState } from "react";
 export default function MovieIntroCarousel({
   handleIntroClick,
   moviesIntro,
   currentIntro,
 }) {
   return (
-    <div className="flex flex-col justify-center font-bold leading-tight text-xs gap-3">
+    <div className="hidden sm:flex  flex-col justify-center font-bold leading-tight text-xs gap-3">
       {moviesIntro.map((movie, index) => {
         let scale = "";
         let textColor = "text-gray-300";

@@ -2,7 +2,7 @@ import Ratings from "../Misc/Ratings";
 export default function MovieDescription({ currentIntro }) {
   return (
     <div className="flex flex-col justify-center items-start h-[600px] w-96 gap-4">
-      <h3 className="text-6xl font-normal font-bold leading-14">
+      <h3 className="text-4xl md:text-6xl font-normal font-bold leading-14">
         {currentIntro.title}
       </h3>
       <Ratings imdb={currentIntro.vote_average} />
