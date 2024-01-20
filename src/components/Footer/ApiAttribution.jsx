@@ -2,7 +2,7 @@ export default function ApiAttribution() {
   return (
     <div className="flex gap-4">
       <img
-        src="src\assets\themoviedbicon.svg"
+        src="../public/themoviedbicon.svg"
         alt="The movie DB api icon"
         width="120"
         height="60"
