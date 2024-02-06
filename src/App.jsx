@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import useFetch from "./hooks/useFetch.jsx";
 import Header from "./components/Header/Header.jsx";
 import MovieIntro from "./components/MovieIntro/MovieIntro.jsx";
-import FeaturedCardsWrapper from "./components/Cards/FeaturedCardsWrapper.jsx";
+import FeaturedCards from "./components/Cards/FeaturedCards.jsx";
 import Footer from "./components/Footer/Footer.jsx"
 function App() {
   const [moviesIntro, setMoviesIntro] = useState([]);
@@ -56,17 +56,17 @@ function App() {
           currentIntro={currentIntro}
           moviesIntro={moviesIntro}
         />
-        <FeaturedCardsWrapper
+        <FeaturedCards
           type={"movie"}
           category={"now_playing"}
           heading="Now Playing"
         />
-        <FeaturedCardsWrapper
+        <FeaturedCards
           type={"movie"}
           category={"top_rated"}
           heading="Top Rated"
         />
-        <FeaturedCardsWrapper
+        <FeaturedCards
           type={"person"}
           category={"popular"}
           heading="Featured Casts"

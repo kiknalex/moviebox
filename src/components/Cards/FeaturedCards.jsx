@@ -1,11 +1,23 @@
 import useEmblaCarousel from "embla-carousel-react";
+import { useState, useEffect } from "react";
+import useFetch from "../../hooks/useFetch";
 import Card from "./Card";
 export default function FeaturedCards({
   type,
-  content,
   heading,
-  loading,
+  category
 }) {
+  const [content, setContent] = useState([]);
+  const { get, loading } = useFetch("https://api.themoviedb.org/3");
+  useEffect(() => {
+    get(`/${type}/${category}?language=en-US&page=1`)
+      .then((data) => {
+        setContent(data.results);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
   const [emblaRef] = useEmblaCarousel();
   return (
     <section className="container w-full mt-12">
