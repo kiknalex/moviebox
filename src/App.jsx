@@ -48,8 +48,8 @@ function App() {
   };
   return (
     <>
+      <Header />
       <main className="">
-        <Header />
         <MovieIntro
           loadin={loading}
           handleIntroClick={onClickIntro}
