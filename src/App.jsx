@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Header />
-      <main className="">
+      <main>
         <MovieIntro />
         <FeaturedCards
           type={"movie"}
